@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Dívida</title>
+</head>
+<body>
+
+<h1>Controle de Dívida</h1>
+
+<script>
+class Divida {
+    constructor(valorInicial) {
+        this.total = valorInicial;
+    }
+
+    pagar(valor) {
+        this.total -= valor;
+    }
+
+    adicionar(valor) {
+        this.total += valor;
+    }
+
+    getTotal() {
+        return this.total;
+    }
+}
+
+const a = new Divida(5000);
+
+document.write("Dívida inicial: " + a.getTotal() + "<br>");
+
+a.pagar(500);
+document.write("Pago: 500<br>");
+
+a.pagar(500);
+document.write("Pago: 500<br>");
+
+a.adicionar(300);
+document.write("Aumento: 300<br>");
+
+a.pagar(500);
+document.write("Pago: 500<br>");
+
+a.adicionar(100);
+document.write("Aumento: 100<br>");
+
+document.write("<br><strong>Dívida final: " + a.getTotal() + "</strong>");
+</script>
+
+</body>
+</html>
